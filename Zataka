@@ -1,0 +1,71 @@
+:.ZARA
+:det(200)→GDB1
+:25→A
+:getKey{^r}
+:getKey→{(19+A)+GDB1}{^r}
+:getKey{^r}
+:getKey→{(21+A)+GDB1}{^r}
+:300→{(1+A)+GDB1}{^r}
+:300→{(13+A)+GDB1}{^r}
+:300→{(3+A)+GDB1}{^r}
+:300→{(15+A)+GDB1}{^r}
+:1000→{(19+A)+GDB1}{^r}
+:200→{(5+A)+GDB1}{^r}
+:200→{(7+A)+GDB1}{^r}
+:1→{(17+A)+GDB1}{^r}
+:50→A
+:getKey{^r}
+:getKey→{(19+A)+GDB1}{^r}
+:getKey{^r}
+:getKey→{(21+A)+GDB1}{^r}
+:600→{(1+A)+GDB1}{^r}
+:600→{(13+A)+GDB1}{^r}
+:600→{(3+A)+GDB1}{^r}
+:600→{(15+A)+GDB1}{^r}
+:1000→{(19+A)+GDB1}{^r}
+:200→{(5+A)+GDB1}{^r}
+:200→{(7+A)+GDB1}{^r}
+:1→{(17+A)+GDB1}{^r}
+:25→A
+:While getKey≠15
+:While A<51
+:If getKey({(19+A)+GDB1}{^r}) or {(17+A)+GDB1}{^r}
+:{(19+A)+GDB1}{^r}-4→{(19+A)+GDB1}{^r}
+:sin({(19+A)+GDB1}{^r})→{(5+A)+GDB1}{^r}
+:‾{(5+A)+GDB1}{^r}→{(9+A)+GDB1}{^r}
+:cos({(19+A)+GDB1}{^r})→{(7+A)+GDB1}{^r}
+:‾{(7+A)+GDB1}{^r}→{(11+A)+GDB1}{^r}
+:0→{(17+A)+GDB1}{^r}
+:End
+:If getKey({(21+A)+GDB1}{^r}) or {(17+A)+GDB1}{^r}
+:{(19+A)+GDB1}{^r}+4→{(19+A)+GDB1}{^r}
+:sin({(19+A)+GDB1}{^r})→{(5+A)+GDB1}{^r}
+:‾{(5+A)+GDB1}{^r}→{(9+A)+GDB1}{^r}
+:cos({(19+A)+GDB1}{^r})→{(7+A)+GDB1}{^r}
+:‾{(7+A)+GDB1}{^r}→{(11+A)+GDB1}{^r}
+:0→{(17+A)+GDB1}{^r}
+:End
+:If {(5+A)+GDB1}{^r}>200
+:{(1+A)+GDB1}{^r}-({(9+A)+GDB1}{^r}/10)→{(1+A)+GDB1}{^r}
+:Else
+:{(1+A)+GDB1}{^r}+({(5+A)+GDB1}{^r}/10)→{(1+A)+GDB1}{^r}
+:End
+:If {(7+A)+GDB1}{^r}>200
+:{(3+A)+GDB1}{^r}-({(11+A)+GDB1}{^r}/10)→{(3+A)+GDB1}{^r}
+:Else
+:{(3+A)+GDB1}{^r}+({(7+A)+GDB1}{^r}/10)→{(3+A)+GDB1}{^r}
+:End
+:If ({(1+A)+GDB1}{^r}/20)≠({(13+A)+GDB1}{^r}/20) or ({(3+A)+GDB1}{^r}/20)≠({(15+A)+GDB1}{^r}/20}
+:If pxl-Test({(1+A)+GDB1}{^r}/20,{(3+A)+GDB1}{^r}/20)
+:Return
+:End
+:End
+:Pxl-On({(1+A)+GDB1}{^r}/20,{(3+A)+GDB1}{^r}/20)
+:{(1+A)+GDB1}{^r}→{(13+A)+GDB1}{^r}
+:{(3+A)+GDB1}{^r}→{(15+A)+GDB1}{^r}
+:DispGraph
+:Pause 30
+
+:End
+:End
+:Return
