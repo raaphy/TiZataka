@@ -1,0 +1,49 @@
+:.ZARA
+:det(200)→GDB1A
+:10→A
+:10→G
+:10→B
+:10→H
+:1000→W
+:200→C
+:200→D
+:1→I
+:While getKey≠15
+:If getKey(3) or I
+:W-4→W
+:sin(W)→C
+:‾C→E
+:cos(W)→D
+:‾D→F
+:0→I
+:End
+:If getKey(2) or I
+:W+4→W
+:sin(W)→C
+:‾C→E
+:cos(W)→D
+:‾D→F
+:0→I
+:End
+:If C>200
+:A-(E/3)→A
+:Else
+:A+(C/3)→A
+:End
+:If D>200
+:B-(F/3)→B
+:Else
+:B+(D/3)→B
+:End
+:If (A/7)≠(G/7) or (B/7)≠(H/7}
+:If pxl-Test(A/7,B/7)
+:Return
+:End
+:End
+:Pxl-On(A/20,B/20)
+:A→G
+:B→H
+:DispGraph
+:Pause 30
+:End
+:Return
