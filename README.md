@@ -1,7 +1,7 @@
 TiZataka
 ========
 
-Zataka game written in Axe parser for TI 83p
+Zataka game written in Axe parser for the Texas Instruments calculator TI 83p
 
 System Requirement:
 TI 83/84p with Axe installed 
